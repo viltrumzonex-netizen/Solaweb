@@ -96,6 +96,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
 .pill .hover-circle {
@@ -103,7 +104,7 @@
   left: 50%;
   bottom: 0;
   border-radius: 50%;
-  background: var(--base, #000);
+  background: var(--pill-bg, #f97316);
   z-index: 1;
   display: block;
   pointer-events: none;
@@ -133,6 +134,20 @@
   z-index: 3;
   display: inline-block;
   will-change: transform, opacity;
+}
+
+/* Hover state: ensure readable text over the pill hover */
+.pill:hover {
+  color: var(--hover-text, #fff);
+}
+
+.pill:hover .pill-label {
+  color: var(--hover-text, #fff);
+}
+
+.pill:hover .hover-circle {
+  background: var(--pill-bg, #f97316);
+  opacity: 1;
 }
 
 .pill.is-active::after {
@@ -191,9 +206,9 @@
 .hamburger-line {
   width: 16px;
   height: 2px;
-  background: var(--pill-bg, #fff);
+  background: var(--pill-text, #374151);
   border-radius: 1px;
-  transition: all 0.01s ease;
+  transition: all 0.15s ease;
   transform-origin: center;
 }
 
@@ -234,6 +249,6 @@
 
 .mobile-menu-popover .mobile-menu-link:hover {
   cursor: pointer;
-  background-color: var(--base);
+  background-color: var(--pill-bg, #f97316);
   color: var(--hover-text, #fff);
 }

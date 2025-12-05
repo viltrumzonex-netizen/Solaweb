@@ -7,7 +7,7 @@
   },
   
   // Puertos que se abrirán automáticamente (para el comando "npm run dev")
-  "forwardPorts": [3000],
+  "forwardPorts": [5000],
   
   "postCreateCommand": "npm install",
   // O si usas PNPM: "postCreateCommand": "pnpm install",
