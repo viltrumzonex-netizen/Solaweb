@@ -126,25 +126,25 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-visible py-24 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center bg-purple-950">
+    <section id="home" className="relative overflow-visible py-24 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center bg-gradient-to-b from-orange-50 to-white">
       {/* Aurora Background Effect */}
       <div className="absolute inset-0 pointer-events-none">
-        <AuroraCSS colorStops={['#FF4000', '#FA0000', '#FF4000']} />
+        <AuroraCSS colorStops={["#FDBA74", "#FB923C", "#FDBA74"]} />
       </div>
 
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.15, scale: 1 }}
+          animate={{ opacity: 0.18, scale: 1 }}
           transition={{ duration: 2 }}
-          className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 w-80 h-80 bg-orange-400 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
+          animate={{ opacity: 0.08, scale: 1 }}
           transition={{ duration: 2.5, delay: 0.5 }}
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full blur-3xl"
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-200 rounded-full blur-3xl"
         />
         <motion.div
           animate={{ 
@@ -182,7 +182,7 @@ const Hero = () => {
           >
 
             {/* Main Headline */}
-            <motion.h1 variants={itemVariants} className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <motion.h1 variants={itemVariants} className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               El Núcleo
               <br />
               <GradientText
@@ -198,7 +198,7 @@ const Hero = () => {
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p variants={itemVariants} className="text-xl text-gray-300 max-w-lg">
+            <motion.p variants={itemVariants} className="text-xl text-gray-700 max-w-lg">
               Plataforma integral que fusiona gestión comercial y control bancario en tiempo real para PyMEs Financieras.
             </motion.p>
 
@@ -210,8 +210,8 @@ const Hero = () => {
                 { icon: '✓', text: 'Reportes y análisis avanzados' },
               ].map((feature, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <span className="text-orange-400 text-lg font-bold">{feature.icon}</span>
-                  <span className="text-gray-200">{feature.text}</span>
+                  <span className="text-orange-500 text-lg font-bold">{feature.icon}</span>
+                    <span className="text-gray-700">{feature.text}</span>
                 </div>
               ))}
             </motion.div>
@@ -219,10 +219,10 @@ const Hero = () => {
             {/* CTA Button */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 pt-4 z-30 relative pointer-events-auto">
               <Button
-                onClick={handleCTA}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-purple-950 px-8 py-6 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 group z-30 relative pointer-events-auto"
-                size="lg"
-              >
+                  onClick={handleCTA}
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-orange-400/40 transition-all duration-300 group z-30 relative pointer-events-auto"
+                  size="lg"
+                >
                 Solicitar prueba gratuita
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>

@@ -41,6 +41,15 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure anchored sections are not hidden behind the fixed header */
+section {
+  scroll-margin-top: 5rem;
+}
+
 /* Hover scales for mockup images */
 .hover-scale-115:hover img {
   transform: scale(1.15);
