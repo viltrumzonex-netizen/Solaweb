@@ -51,7 +51,7 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="py-4 px-4 sm:px-6 lg:px-8 bg-white/70 backdrop-blur-md sticky top-0 z-40 border-b border-orange-200"
+      className="py-3 px-3 sm:px-6 lg:px-8 bg-white/70 backdrop-blur-md sticky top-0 z-40 border-b border-orange-200"
     >
       <div className="max-w-7xl mx-auto">
         <PillNav

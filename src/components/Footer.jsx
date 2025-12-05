@@ -58,9 +58,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-900 text-white py-10 sm:py-16 px-3 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12 mb-10 sm:mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <motion.div
@@ -69,14 +69,14 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
                 {/* Logo */}
-                <img src={logoUrl} alt="Flowi Logo" className="h-12 sm:h-16 w-auto" /> {/* Adjusted height for better visibility */}
+                <img src={logoUrl} alt="Flowi Logo" className="h-10 sm:h-12 lg:h-16 w-auto" /> {/* Adjusted height for better visibility */}
               </div>
-              <p className="text-gray-400 mb-6 max-w-xs">
+              <p className="text-gray-400 mb-5 sm:mb-6 max-w-xs text-sm sm:text-base">
                 Tu productividad sin estrés, guiada por la simplicidad. Transforma tu manera de trabajar.
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 {socialLinks.map((social) => (
                   <button
                     key={social.name}
@@ -100,15 +100,15 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <span className="text-white font-semibold mb-4 block capitalize">
+              <span className="text-white font-semibold mb-3 sm:mb-4 block capitalize text-sm sm:text-base">
                 {category}
               </span>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {links.map((link) => (
                   <li key={link.name}>
                     <button
                       onClick={() => handleLinkClick(link.name)}
-                      className="text-gray-400 hover:text-orange-500 transition-colors duration-300"
+                      className="text-gray-400 hover:text-orange-500 transition-colors duration-300 text-sm sm:text-base"
                     >
                       {link.name}
                     </button>
@@ -125,13 +125,13 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="pt-8 border-t border-gray-800"
+          className="pt-6 sm:pt-8 border-t border-gray-800"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-center sm:text-left">
+            <p className="text-gray-400 text-xs sm:text-sm">
               © 2025 Flowi. Todos los derechos reservados.
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 text-xs sm:text-sm">
               Hecho con ❤️ para aumentar tu productividad
             </p>
           </div>

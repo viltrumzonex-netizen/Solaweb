@@ -13,11 +13,17 @@ const Hero = () => {
   
   // Calcular posiciones responsivas basadas en el ancho de pantalla
   const getResponsivePositions = () => {
-    if (screenWidth < 640) { // Mobile
+    if (screenWidth < 480) { // Mobile muy pequeño
       return {
-        left: { posX: -80, posY: -10, scale: 0.9 },
-        center: { posX: 0, posY: -40, scale: 1.1 },
-        right: { posX: 80, posY: -10, scale: 0.9 }
+        left: { posX: -60, posY: 0, scale: 0.7 },
+        center: { posX: 0, posY: -30, scale: 0.85 },
+        right: { posX: 60, posY: 0, scale: 0.7 }
+      };
+    } else if (screenWidth < 640) { // Mobile
+      return {
+        left: { posX: -70, posY: -5, scale: 0.8 },
+        center: { posX: 0, posY: -35, scale: 0.95 },
+        right: { posX: 70, posY: -5, scale: 0.8 }
       };
     } else if (screenWidth < 1024) { // Tablet
       return {
@@ -126,7 +132,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative overflow-visible py-24 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center bg-gradient-to-b from-orange-50 to-white">
+    <section id="home" className="relative overflow-visible py-12 px-3 sm:px-6 lg:px-8 min-h-screen flex items-center bg-gradient-to-b from-orange-50 to-white">
       {/* Aurora Background Effect */}
       <div className="absolute inset-0 pointer-events-none">
         <AuroraCSS colorStops={["#FDBA74", "#FB923C", "#FDBA74"]} />
@@ -138,13 +144,13 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.18, scale: 1 }}
           transition={{ duration: 2 }}
-          className="absolute -top-40 -right-40 w-80 h-80 bg-orange-400 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 w-60 sm:w-80 h-60 sm:h-80 bg-orange-400 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.08, scale: 1 }}
           transition={{ duration: 2.5, delay: 0.5 }}
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-200 rounded-full blur-3xl"
+          className="absolute -bottom-40 -left-40 w-60 sm:w-80 h-60 sm:h-80 bg-orange-200 rounded-full blur-3xl"
         />
         <motion.div
           animate={{ 
@@ -152,12 +158,12 @@ const Hero = () => {
             y: [0, 30, 0],
           }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 right-1/4 w-32 h-32 bg-orange-400/5 rounded-full blur-2xl"
+          className="absolute top-1/2 right-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-orange-400/5 rounded-full blur-2xl"
         />
       </div>
 
       {/* Draggable Sticker Container - Full Hero Width */}
-      <div className="absolute top-0 left-0 w-screen h-screen z-50 pointer-events-none">
+      <div className="absolute top-0 left-0 w-screen h-screen z-50 pointer-events-none hidden sm:block">
         <StickerPeel
           imageSrc="/images/flowi-gato.png"
           width={160}
@@ -172,24 +178,24 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto relative z-30 w-full h-auto pointer-events-auto">
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center relative z-30 pointer-events-auto">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 items-center relative z-30 pointer-events-auto">
           {/* Left Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="space-y-8 relative"
+            className="space-y-6 sm:space-y-8 relative"
           >
 
             {/* Main Headline */}
-            <motion.h1 variants={itemVariants} className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               El Núcleo
               <br />
               <GradientText
                 colors={['#FCB045', '#FCB045', '#FD1D1D', '#FD1D1D', '#FD1D1D']}
                 animationSpeed={3}
                 showBorder={false}
-                className="text-5xl lg:text-6xl font-bold"
+                className="text-3xl sm:text-5xl lg:text-6xl font-bold"
               >
                 Operacional
               </GradientText>
@@ -198,33 +204,33 @@ const Hero = () => {
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p variants={itemVariants} className="text-xl text-gray-700 max-w-lg">
+            <motion.p variants={itemVariants} className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-lg">
               Plataforma integral que fusiona gestión comercial y control bancario en tiempo real para PyMEs Financieras.
             </motion.p>
 
             {/* Features List */}
-            <motion.div variants={itemVariants} className="space-y-3">
+            <motion.div variants={itemVariants} className="space-y-2 sm:space-y-3">
               {[
                 { icon: '✓', text: 'Dashboard unificado' },
                 { icon: '✓', text: 'Control bancario en tiempo real' },
                 { icon: '✓', text: 'Reportes y análisis avanzados' },
               ].map((feature, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <span className="text-orange-500 text-lg font-bold">{feature.icon}</span>
-                    <span className="text-gray-700">{feature.text}</span>
+                <div key={idx} className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-orange-500 text-lg font-bold flex-shrink-0">{feature.icon}</span>
+                    <span className="text-gray-700 text-sm sm:text-base">{feature.text}</span>
                 </div>
               ))}
             </motion.div>
 
             {/* CTA Button */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 pt-4 z-30 relative pointer-events-auto">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 z-30 relative pointer-events-auto">
               <Button
                   onClick={handleCTA}
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-orange-400/40 transition-all duration-300 group z-30 relative pointer-events-auto"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-orange-400/40 transition-all duration-300 group z-30 relative pointer-events-auto w-full sm:w-auto"
                   size="lg"
                 >
                 Solicitar prueba gratuita
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform hidden sm:inline" />
               </Button>
             </motion.div>
           </motion.div>
@@ -234,7 +240,7 @@ const Hero = () => {
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            className="relative h-full flex items-center justify-center z-30 pointer-events-auto"
+            className="relative h-auto sm:h-full flex items-center justify-center z-30 pointer-events-auto"
           >
 
             <div className="relative w-full h-96 flex items-center justify-center z-30 pointer-events-auto">

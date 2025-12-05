@@ -58,3 +58,39 @@ section {
 .hover-scale-120:hover img {
   transform: scale(1.2);
 }
+
+/* Responsive typography improvements */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  p {
+    @apply text-sm;
+  }
+}
+
+/* Image optimization for mobile */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent layout shift on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

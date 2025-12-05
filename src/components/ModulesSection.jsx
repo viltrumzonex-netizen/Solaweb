@@ -137,20 +137,20 @@ const ModulesSection = () => {
   ];
 
   return (
-    <section id="modules" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50">
+    <section id="modules" className="py-12 sm:py-16 lg:py-24 px-3 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             Módulos Completos de Gestión
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-xl text-gray-600 max-w-2xl mx-auto px-2">
             Cada módulo está diseñado para resolver problemas específicos de tu negocio
           </p>
         </div>
 
         {/* Modules Accordion */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {modules.map((module, index) => {
             const Icon = module.icon;
             const isExpanded = expandedModule === index;
@@ -165,17 +165,17 @@ const ModulesSection = () => {
                 {/* Header */}
                 <button
                   onClick={() => setExpandedModule(isExpanded ? -1 : index)}
-                  className="w-full px-6 py-4 flex items-center gap-4 hover:bg-orange-100 transition-colors"
+                  className="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-4 hover:bg-orange-100 transition-colors"
                 >
-                  <div className="p-2 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg">
-                    <Icon className="w-5 h-5 text-white" />
+                  <div className="p-2 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex-shrink-0">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
-                  <div className="flex-1 text-left">
-                    <h3 className="text-lg font-semibold text-gray-900">{module.title}</h3>
-                    <p className="text-sm text-gray-600">{module.subtitle}</p>
+                  <div className="flex-1 text-left min-w-0">
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 truncate">{module.title}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 line-clamp-1">{module.subtitle}</p>
                   </div>
                   <ChevronDown
-                    className={`w-5 h-5 text-orange-400 transition-transform duration-300 ${
+                    className={`w-4 h-4 sm:w-5 sm:h-5 text-orange-400 transition-transform duration-300 flex-shrink-0 ${
                       isExpanded ? 'rotate-180' : ''
                     }`}
                   />
@@ -183,20 +183,20 @@ const ModulesSection = () => {
 
                 {/* Content */}
                 {isExpanded && (
-                  <div className="px-6 py-6 border-t border-orange-200 bg-orange-50">
+                  <div className="px-4 sm:px-6 py-4 sm:py-6 border-t border-orange-200 bg-orange-50">
                     {/* Problem */}
-                    <div className="mb-6 pb-6 border-b border-orange-200">
-                      <h4 className="text-sm font-semibold text-red-500 mb-2">El Problema</h4>
-                      <p className="text-gray-700">{module.details.problem}</p>
+                    <div className="mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-orange-200">
+                      <h4 className="text-xs sm:text-sm font-semibold text-red-500 mb-2">El Problema</h4>
+                      <p className="text-gray-700 text-xs sm:text-sm">{module.details.problem}</p>
                     </div>
 
                     {/* Features */}
-                    <div className="mb-6 pb-6 border-b border-purple-700/50">
-                      <h4 className="text-sm font-semibold text-orange-600 mb-4">Características</h4>
-                      <ul className="space-y-2">
+                    <div className="mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-purple-700/50">
+                      <h4 className="text-xs sm:text-sm font-semibold text-orange-600 mb-3 sm:mb-4">Características</h4>
+                      <ul className="space-y-1.5 sm:space-y-2">
                         {module.details.features.map((feature, fIdx) => (
-                          <li key={fIdx} className="flex gap-3 text-gray-700">
-                            <span className="text-orange-500 font-bold">✓</span>
+                          <li key={fIdx} className="flex gap-2 sm:gap-3 text-gray-700 text-xs sm:text-sm">
+                            <span className="text-orange-500 font-bold flex-shrink-0">✓</span>
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -204,9 +204,9 @@ const ModulesSection = () => {
                     </div>
 
                     {/* Impact */}
-                    <div className="bg-gradient-to-r from-orange-100 to-orange-50 rounded-lg p-4">
-                      <h4 className="text-sm font-semibold text-gray-800 mb-1">Impacto</h4>
-                      <p className="text-gray-800 font-semibold">{module.details.impact}</p>
+                    <div className="bg-gradient-to-r from-orange-100 to-orange-50 rounded-lg p-3 sm:p-4">
+                      <h4 className="text-xs sm:text-sm font-semibold text-gray-800 mb-1">Impacto</h4>
+                      <p className="text-gray-800 font-semibold text-xs sm:text-sm">{module.details.impact}</p>
                     </div>
                   </div>
                 )}

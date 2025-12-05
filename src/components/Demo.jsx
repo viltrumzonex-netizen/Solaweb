@@ -34,21 +34,21 @@ const Demo = () => {
   };
 
   return (
-    <section id="demo" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50">
+    <section id="demo" className="py-12 sm:py-16 lg:py-24 px-3 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             Conoce Flowi en Acción
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-xl text-gray-600 max-w-2xl mx-auto px-2">
             Explora las principales características de nuestra plataforma de gestión comercial
           </p>
         </div>
 
         {/* Slider Container */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-orange-200">
-          <div className="relative h-96 sm:h-[500px] md:h-[600px] bg-gray-100 flex items-center justify-center">
+          <div className="relative h-64 sm:h-96 md:h-[500px] lg:h-[600px] bg-gray-100 flex items-center justify-center">
             {/* Slides */}
             {slides.map((slide, index) => (
               <div
@@ -68,30 +68,30 @@ const Demo = () => {
             {/* Navigation Buttons */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-full transition-colors shadow-lg"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-600 text-white p-1.5 sm:p-2 rounded-full transition-colors shadow-lg"
               aria-label="Anterior"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-full transition-colors shadow-lg"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 bg-orange-500 hover:bg-orange-600 text-white p-1.5 sm:p-2 rounded-full transition-colors shadow-lg"
               aria-label="Siguiente"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
           {/* Info Section */}
-          <div className="p-8 sm:p-12 bg-gradient-to-br from-orange-50 to-white">
-            <h3 className="text-2xl sm:text-3xl font-bold text-orange-600 mb-2">
+          <div className="p-5 sm:p-8 lg:p-12 bg-gradient-to-br from-orange-50 to-white">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-600 mb-2">
               {slides[currentSlide].title}
             </h3>
-            <p className="text-lg text-orange-500 font-semibold mb-4">
+            <p className="text-base sm:text-lg text-orange-500 font-semibold mb-3 sm:mb-4">
               {slides[currentSlide].subtitle}
             </p>
-            <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+            <p className="text-gray-700 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 leading-relaxed">
               {slides[currentSlide].description}
             </p>
 
