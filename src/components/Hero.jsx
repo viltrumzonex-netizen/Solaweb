@@ -331,19 +331,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Dashboard Full Width Below All Content */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          className="mt-24 w-full"
-        >
-          <img 
-            src="/images/dashboard-full.png"
-            alt="Dashboard Flowi"
-            className="w-full rounded-3xl shadow-2xl object-contain"
-          />
-        </motion.div>
+        {/* Dashboard image removed (file not present) to free space */}
       </div>
 
       {/* Image Controller */}
