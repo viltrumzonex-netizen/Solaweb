@@ -259,7 +259,7 @@ const Hero = () => {
                     }}
                   >
                     <img 
-                      src="/images/CapturaM2-removebg-preview_1764622751470.png"
+                      src="/images/CapturaM2-removebg-preview.png"
                       alt="Sistema de Ventas"
                       className="h-80 rounded-2xl transition-transform duration-300 object-contain"
                     />
