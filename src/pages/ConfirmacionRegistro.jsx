@@ -162,8 +162,10 @@ const ConfirmacionRegistro = () => {
               Volver al Inicio
             </button>
             <a
-              href="mailto:whilder_2014@hotmail.com"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+              href="https://wa.me/584121156707" // Nueva URL de WhatsApp
+              target="_blank" // Para abrir en una pestaña nueva
+              rel="noopener noreferrer" // Seguridad web estándar
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
             >
               Contactar Soporte
             </a>

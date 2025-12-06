@@ -78,20 +78,24 @@ function App() {
           }
         />
         <Route
-          path="/solicitar-prueba"
-          element={
-            <LegalPageLayout>
-              <SolicitudPrueba />
-            </LegalPageLayout>
-          }
-        />
-        <Route
-          path="/confirmacion-registro"
-          element={<ConfirmacionRegistro />}
-        />
-      </Routes>
-    </BrowserRouter>
-  );
+          path="/solicitar-prueba"
+          element={
+            <LegalPageLayout>
+              <SolicitudPrueba />
+            </LegalPageLayout>
+          }
+        />
+        <Route
+          path="/confirmacion-registro" // <--- ESTA ES LA RUTA A MODIFICAR
+          element={
+            <LegalPageLayout> 
+              <ConfirmacionRegistro />
+            </LegalPageLayout> 
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App;
+export default App; 
