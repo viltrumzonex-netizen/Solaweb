@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header'; // Import the new Header component
@@ -13,6 +13,11 @@ import Pricing from '@/components/Pricing';
 import Footer from '@/components/Footer';
 
 function App() {
+  useEffect(() => {
+    // Scroll to top on mount
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>

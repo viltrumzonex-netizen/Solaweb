@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client';
 import App from '@/App';
 import '@/index.css';
 
+// Scroll to top immediately on page load
+window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+
 // Custom event listener for showing toasts
 window.addEventListener('show-toast', (event) => {
   const { title, description } = event.detail;
