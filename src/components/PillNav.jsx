@@ -209,10 +209,23 @@ const PillNav = ({
     href.startsWith('https://') ||
     href.startsWith('//') ||
     href.startsWith('mailto:') ||
-    href.startsWith('tel:') ||
-    href.startsWith('#');
+    href.startsWith('tel:');
 
   const isRouterLink = href => href && !isExternalLink(href);
+
+  const handleNavClick = (e, href) => {
+    if (href?.startsWith('#')) {
+      e.preventDefault();
+      const elementId = href.slice(1);
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else if (elementId === 'home') {
+        // Si estamos en otra página y clickeamos home, navega a root
+        window.location.href = '/#home';
+      }
+    }
+  };
 
   const cssVars = {
     ['--base']: baseColor,
@@ -227,6 +240,7 @@ const PillNav = ({
         <a
           className="pill-logo"
           href={items?.[0]?.href || '#'}
+          onClick={(e) => handleNavClick(e, items?.[0]?.href || '#')}
           aria-label="Home"
           onMouseEnter={handleLogoEnter}
           ref={el => {
@@ -243,6 +257,7 @@ const PillNav = ({
                 <a
                   role="menuitem"
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={`pill${activeHref === item.href ? ' is-active' : ''}`}
                   aria-label={item.ariaLabel || item.label}
                   onMouseEnter={() => handleEnter(i)}
@@ -284,8 +299,11 @@ const PillNav = ({
             <li key={item.href || `mobile-item-${i}`}>
               <a
                 href={item.href}
+                onClick={(e) => {
+                  handleNavClick(e, item.href);
+                  setIsMobileMenuOpen(false);
+                }}
                 className={`mobile-menu-link${activeHref === item.href ? ' is-active' : ''}`}
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
               </a>

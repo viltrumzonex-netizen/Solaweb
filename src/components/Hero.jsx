@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, BarChart3 } from 'lucide-react';
 import StickerPeel from './StickerPeel';
@@ -8,6 +9,7 @@ import AuroraCSS from './AuroraCSS';
 import ImageController from './ImageController';
 
 const Hero = () => {
+  const navigate = useNavigate();
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
   
@@ -102,13 +104,7 @@ const Hero = () => {
 
   const getImageConfig = (id) => images.find(img => img.id === id);
   const handleCTA = () => {
-    const event = new CustomEvent('show-toast', {
-      detail: {
-        title: '¡Próximamente!',
-        description: 'La plataforma Flowi estará disponible muy pronto. Déjanos tu email para ser de los primeros.'
-      }
-    });
-    window.dispatchEvent(event);
+    navigate('/solicitar-prueba');
   };
 
   const containerVariants = {

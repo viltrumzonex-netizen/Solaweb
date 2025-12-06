@@ -9,9 +9,7 @@ const Header = () => {
     { label: 'Características', href: '#main-features' },
     { label: 'Módulos', href: '#modules' },
     { label: 'Beneficios', href: '#benefits' },
-    { label: 'Industrias', href: '#industries' },
-    { label: 'Testimonios', href: '#testimonials' },
-    { label: 'Precios', href: '#pricing' }
+    { label: 'Industrias', href: '#industries' }
   ];
 
   const [activeHref, setActiveHref] = useState('#home');

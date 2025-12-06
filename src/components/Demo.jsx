@@ -113,32 +113,6 @@ const Demo = () => {
           </div>
         </div>
 
-        {/* Features Under Demo */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center p-6 rounded-xl bg-orange-50 border-2 border-orange-200">
-            <div className="text-4xl mb-3">🎨</div>
-            <h4 className="font-bold text-orange-900 mb-2">Interfaz Intuitiva</h4>
-            <p className="text-orange-700">
-              Diseño moderno y fácil de usar para cualquier usuario
-            </p>
-          </div>
-
-          <div className="text-center p-6 rounded-xl bg-orange-50 border-2 border-orange-200">
-            <div className="text-4xl mb-3">⚡</div>
-            <h4 className="font-bold text-orange-900 mb-2">Rápido y Eficiente</h4>
-            <p className="text-orange-700">
-              Procesa operaciones en segundos con máximo rendimiento
-            </p>
-          </div>
-
-          <div className="text-center p-6 rounded-xl bg-orange-50 border-2 border-orange-200">
-            <div className="text-4xl mb-3">🔒</div>
-            <h4 className="font-bold text-orange-900 mb-2">Seguro y Confiable</h4>
-            <p className="text-orange-700">
-              Tu información protegida con encriptación y respaldos
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
